@@ -86,19 +86,17 @@ const FooterContactInfo = () => {
             </div>
 
             {/* Column 3: Site Links 1 */}
-            <div>
-              <h3 className="text-[#004172] font-display text-[22px] font-bold mb-8">Links</h3>
-              <ul className="flex flex-col gap-3">
-                <li><a href="/" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Home</a></li>
-                <li><a href="/company" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Company</a></li>
-                <li><a href="/gmep" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">GMEP</a></li>
-                <li><a href="/data-centres" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Data centres</a></li>
-                <li><a href="/maintenance-aftercare" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Maintenance & Aftercare</a></li>
-                <li><a href="/case-studies" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Case Studies</a></li>
-                <li><a href="/apprenticeships" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Apprenticeships</a></li>
-                <li><a href="/vacancies" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Vacancies</a></li>
-              </ul>
-            </div>
+              <div>
+                <h3 className="text-[#004172] font-display text-[22px] font-bold mb-8">Links</h3>
+                <ul className="flex flex-col gap-3">
+                  <li><a href="/" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Home</a></li>
+                  <li><a href="/about" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">About</a></li>
+                  <li><a href="/services" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Our Services</a></li>
+                  <li><a href="/projects" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Projects</a></li>
+                  <li><a href="/blog" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Blog</a></li>
+                  <li><a href="/contact" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Contact</a></li>
+                </ul>
+              </div>
 
             {/* Column 4: Site Links 2 */}
             <div className="pt-0 md:pt-[60px]">

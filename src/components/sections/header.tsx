@@ -65,50 +65,40 @@ const Header = () => {
           </div>
 
           {/* Primary Nav Menu */}
-          <nav className="hidden xl:flex items-center h-full">
-            <ul className="flex items-center h-full m-0 p-0 list-none">
-              <li className="h-full group">
-                <a href="/" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red border-b-[3px] border-brand-navy bg-brand-navy/5 transition-all">
-                  Home
-                </a>
-              </li>
-              <li className="h-full relative group">
-                <a href="/company" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
-                  Company <ChevronDown size={14} className="ml-1" />
-                </a>
-                {/* Mega/Sub Menu Placeholder Style */}
-                <div className="absolute top-full left-0 w-[240px] bg-brand-navy text-white invisible group-hover:visible transition-all py-4 flex flex-col shadow-xl">
-                    <a href="/company/our-aims-and-ethos" className="px-6 py-3 hover:bg-brand-red transition-colors text-sm font-medium">Our aims and ethos</a>
-                    <a href="/company/leadership-team" className="px-6 py-3 hover:bg-brand-red transition-colors text-sm font-medium">Leadership team</a>
-                    <a href="/company/innovation" className="px-6 py-3 hover:bg-brand-red transition-colors text-sm font-medium">Innovation</a>
-                </div>
-              </li>
-              <li className="h-full group">
-                <a href="/gmep" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
-                  GMEP
-                </a>
-              </li>
-              <li className="h-full group">
-                <a href="/bim" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
-                  BIM
-                </a>
-              </li>
-              <li className="h-full group">
-                <a href="/maintenance-aftercare" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all text-center">
-                  Maintenance & Aftercare
-                </a>
-              </li>
-              <li className="h-full group">
-                <a href="/case-studies" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
-                  Case Studies
-                </a>
-              </li>
-              <li className="h-full group">
-                <a href="/data-centres" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
-                  Data centres
-                </a>
-              </li>
-            </ul>
+            <nav className="hidden xl:flex items-center h-full">
+              <ul className="flex items-center h-full m-0 p-0 list-none">
+                <li className="h-full group">
+                  <a href="/" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red border-b-[3px] border-brand-navy bg-brand-navy/5 transition-all">
+                    Home
+                  </a>
+                </li>
+                <li className="h-full group">
+                  <a href="/about" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
+                    About
+                  </a>
+                </li>
+                <li className="h-full group">
+                  <a href="/services" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
+                    Our Services
+                  </a>
+                </li>
+                <li className="h-full relative group">
+                  <a href="/projects" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
+                    Projects <ChevronDown size={14} className="ml-1" />
+                  </a>
+                  {/* Projects Sub Menu */}
+                  <div className="absolute top-full left-0 w-[200px] bg-brand-navy text-white invisible group-hover:visible transition-all py-4 flex flex-col shadow-xl">
+                      <a href="/projects?filter=ongoing" className="px-6 py-3 hover:bg-brand-red transition-colors text-sm font-medium">Ongoing</a>
+                      <a href="/projects?filter=completed" className="px-6 py-3 hover:bg-brand-red transition-colors text-sm font-medium">Completed</a>
+                      <a href="/projects?filter=coming" className="px-6 py-3 hover:bg-brand-red transition-colors text-sm font-medium">Coming Soon</a>
+                  </div>
+                </li>
+                <li className="h-full group">
+                  <a href="/blog" className="flex items-center px-4 h-full text-brand-navy font-display text-[15px] font-bold uppercase tracking-tight hover:text-brand-red transition-all">
+                    Blog
+                  </a>
+                </li>
+              </ul>
             
             {/* CTA Button */}
             <div className="ml-6">

@@ -1,9 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-brand-navy: #004172;
+  --color-brand-red: #dc1e2d;
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -124,4 +129,77 @@
 /* Hide Next.js error overlay portal */
 nextjs-portal {
   display: none !important;
+}
+
+/* Gloster MEP Brand Styles */
+.font-display {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.text-brand-navy {
+  color: #004172;
+}
+
+.text-brand-red {
+  color: #dc1e2d;
+}
+
+.bg-brand-navy {
+  background-color: #004172;
+}
+
+.bg-brand-red {
+  background-color: #dc1e2d;
+}
+
+.border-brand-navy {
+  border-color: #004172;
+}
+
+.border-brand-red {
+  border-color: #dc1e2d;
+}
+
+.hover\:bg-brand-navy:hover {
+  background-color: #004172;
+}
+
+.hover\:bg-brand-red:hover {
+  background-color: #dc1e2d;
+}
+
+.hover\:text-brand-red:hover {
+  color: #dc1e2d;
+}
+
+.hover\:text-brand-navy:hover {
+  color: #004172;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
