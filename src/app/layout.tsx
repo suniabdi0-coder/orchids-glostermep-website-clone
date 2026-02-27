@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import WhatsAppButton from "@/components/ui/whatsapp-button";
 import "./globals.css";
-import { VisualEditsMessenger } from "orchids-visual-edits";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
-  title: "Gloster MEP | Mechanical, Electrical & Public Health Contractors",
-  description: "Gloster MEP Ltd is a dynamic mechanical, electrical and public health contractor delivering innovative engineering solutions across commercial, residential, and data centre sectors.",
+  title: "Ventario Engineering | Mechanical, Electrical & Plumbing Contractors",
+  description: "Ventario Engineering is committed to delivering practical engineering solutions that meet client needs while adhering to technical standards and best practices. Our team combines field experience with strong technical knowledge to support projects of varying scale and complexity.",
 };
 
 export default function RootLayout({
@@ -25,11 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased overflow-x-hidden">
         {children}
-        <VisualEditsMessenger />
+        <WhatsAppButton />
       </body>
     </html>
   );

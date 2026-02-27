@@ -21,95 +21,97 @@ interface Project {
 }
 
 const projects: Project[] = [
+  // First 4 projects from home page case studies
   {
     id: 1,
-    title: "The Shard Commercial Tower",
-    location: "London, UK",
-    sector: "Commercial",
+    title: "Jigjiga University",
+    location: "Jigjiga, Ethiopia",
+    sector: "Education",
     status: "completed",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&h=600&fit=crop",
-    description: "Complete MEP installation for a 45-storey commercial development including HVAC, electrical distribution, and fire protection systems.",
-    year: "2024"
+    image: "/for images/Jijiga-Universityd.webp",
+    description: "Complete MEP installation for university campus including lecture halls, laboratories, and administrative buildings with advanced HVAC and electrical systems.",
+    year: "2023"
   },
   {
     id: 2,
-    title: "Manchester Data Centre",
-    location: "Manchester, UK",
-    sector: "Data Centres",
+    title: "Duule Hotel",
+    location: "Jigjiga, Ethiopia",
+    sector: "Hospitality",
     status: "completed",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-    description: "High-specification MEP infrastructure for a Tier 4 data centre with redundant cooling and power systems.",
+    image: "/for images/duule hotel.jpg",
+    description: "Luxury hotel MEP systems including HVAC, plumbing, electrical distribution, and specialized kitchen ventilation systems.",
     year: "2024"
   },
   {
     id: 3,
-    title: "Royal Hospital Wing Extension",
-    location: "Birmingham, UK",
-    sector: "Healthcare",
+    title: "Sky Hotel",
+    location: "Jigjiga, Ethiopia",
+    sector: "Hospitality",
     status: "ongoing",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop",
-    description: "Critical care MEP systems including medical gas, specialist ventilation, and emergency backup power.",
+    image: "/for images/sky hotel.jpeg",
+    description: "Modern hotel development with comprehensive MEP solutions including smart building management and energy-efficient systems.",
     year: "2025"
   },
   {
     id: 4,
-    title: "Canary Wharf Office Complex",
-    location: "London, UK",
-    sector: "Commercial",
-    status: "ongoing",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
-    description: "Sustainable MEP solutions featuring heat recovery, solar integration, and smart building management.",
-    year: "2025"
+    title: "Shabeelay Resort",
+    location: "Jigjiga, Ethiopia",
+    sector: "Hospitality",
+    status: "completed",
+    image: "/for images/shabelay resort.jpg",
+    description: "Resort facility with complex MEP requirements including pool systems, spa ventilation, and comprehensive utilities infrastructure.",
+    year: "2024"
   },
+  // 5 new Ethiopian projects
   {
     id: 5,
-    title: "Bristol Residential Tower",
-    location: "Bristol, UK",
-    sector: "Residential",
+    title: "Kabri Dahar Airport",
+    location: "Kabri Dahar, Ethiopia",
+    sector: "Aviation",
     status: "ongoing",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
-    description: "Luxury residential development with underfloor heating, smart home integration, and communal systems.",
+    image: "/for images/pantnagar-airport-dehradun-pgh.webp",
+    description: "Airport terminal MEP systems including specialized HVAC for passenger areas, runway lighting, and fire protection systems.",
     year: "2025"
   },
   {
     id: 6,
-    title: "Leeds Innovation Hub",
-    location: "Leeds, UK",
-    sector: "Education",
-    status: "coming",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop",
-    description: "State-of-the-art university facility with laboratory-grade ventilation and sustainable energy systems.",
-    year: "2026"
+    title: "Ethio Telecom Office",
+    location: "Jigjiga, Ethiopia",
+    sector: "Commercial",
+    status: "completed",
+    image: "/for images/ethio telecom office.jpeg",
+    description: "Corporate office complex with advanced MEP infrastructure including data center cooling and redundant power systems.",
+    year: "2024"
   },
   {
     id: 7,
-    title: "Edinburgh Hotel & Spa",
-    location: "Edinburgh, UK",
-    sector: "Hospitality",
-    status: "coming",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
-    description: "Luxury hospitality MEP including pool plant, spa facilities, and bespoke lighting throughout.",
-    year: "2026"
+    title: "Mina Factory",
+    location: "Dire Dawa, Ethiopia",
+    sector: "Industrial",
+    status: "ongoing",
+    image: "/for images/mina factory.jpeg",
+    description: "Industrial manufacturing facility with specialized MEP systems including process ventilation, compressed air, and heavy-duty electrical infrastructure.",
+    year: "2025"
   },
   {
     id: 8,
-    title: "Cardiff Retail Development",
-    location: "Cardiff, UK",
-    sector: "Retail",
+    title: "Mubaric Business Center",
+    location: "Jigjiga, Ethiopia",
+    sector: "Commercial",
     status: "completed",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
-    description: "Major retail centre with complex tenant fit-out coordination and central plant systems.",
+    image: "/for images/mubarik business center.jpeg",
+    description: "Mixed-use commercial development with integrated MEP solutions including retail, office, and parking facilities.",
     year: "2023"
   },
   {
     id: 9,
-    title: "Glasgow Tech Campus",
-    location: "Glasgow, UK",
-    sector: "Commercial",
-    status: "coming",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
-    description: "Multi-building tech campus with district heating network and cutting-edge BMS integration.",
-    year: "2026"
+    title: "Ethiopian Railway Station",
+    location: "Addis Ababa, Ethiopia",
+    sector: "Transportation",
+    status: "ongoing",
+    image: "/for images/ethiopian railway station.jpeg",
+    description: "Modern railway station with comprehensive MEP systems including platform services, station control systems, and passenger facilities.",
+    year: "2025"
   }
 ];
 
@@ -128,9 +130,17 @@ const statusColors = {
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<ProjectStatus>('all');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isProjectFormModalOpen, setIsProjectFormModalOpen] = useState(false);
+  const [isProjectFormSubmitted, setIsProjectFormSubmitted] = useState(false);
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const handleProjectSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsProjectFormSubmitted(true);
+  };
+
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(p => p.status === activeFilter);
 
   const projectCounts = {
@@ -143,25 +153,25 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="relative bg-[#004172] text-white py-24 overflow-hidden">
+      <section className="relative bg-[#5BA4D9] text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+          <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }}></div>
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <p className="text-[#DC1E2D] font-display text-sm font-bold uppercase tracking-widest mb-4">Our Portfolio</p>
+            <p className="text-white/90 font-display text-sm font-bold uppercase tracking-widest mb-4">Our Portfolio</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Projects
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Explore our diverse portfolio of mechanical, electrical, and public health engineering projects delivered across the UK.
+              Explore our diverse portfolio of mechanical, electrical, and Plumbing engineering projects delivered across Ethiopia.
             </p>
           </div>
         </div>
-        
+
         {/* Curved bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-white" style={{ borderRadius: '100% 100% 0 0' }}></div>
       </section>
@@ -174,11 +184,10 @@ export default function ProjectsPage() {
               <button
                 key={status}
                 onClick={() => setActiveFilter(status)}
-                className={`px-8 py-3 rounded-full font-display text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
-                  activeFilter === status
-                    ? 'bg-[#DC1E2D] text-white shadow-lg'
-                    : 'bg-gray-100 text-[#004172] hover:bg-gray-200'
-                }`}
+                className={`px-8 py-3 rounded-full font-display text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeFilter === status
+                  ? 'bg-[#D64455] text-white shadow-lg'
+                  : 'bg-gray-100 text-[#1A1A1A] hover:bg-gray-200'
+                  }`}
               >
                 {statusLabels[status]}
                 <span className="ml-2 opacity-70">({projectCounts[status]})</span>
@@ -188,62 +197,78 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-20 bg-gray-50">
+      {/* Projects Grid — Circular Cards */}
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 justify-items-center">
             {filteredProjects.map((project) => (
-              <article 
+              <article
                 key={project.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group flex flex-col items-center text-center max-w-[300px]"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className={`${statusColors[project.status]} text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full`}>
+                {/* Circular Image Card */}
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="relative block w-[260px] h-[260px] transition-transform duration-300 hover:scale-105 mb-6 focus:outline-none"
+                >
+                  {/* Outer Red Ring */}
+                  <div className="absolute inset-0 rounded-full border-[8px] border-[#D64455] z-30"></div>
+
+                  {/* Inner White Ring */}
+                  <div className="absolute inset-[8px] rounded-full border-[8px] border-white z-20"></div>
+
+                  {/* Main Blue Circle with Project Image */}
+                  <div className="absolute inset-[16px] rounded-full bg-[#5BA4D9] z-10 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    {/* Dark overlay for text readability on hover */}
+                    <div className="absolute inset-0 bg-[#1A1A1A]/0 group-hover:bg-[#1A1A1A]/50 transition-all duration-300 flex items-center justify-center">
+                      <span className="text-white font-display font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 leading-tight">
+                        {project.title}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Status Badge */}
+                  <div className="absolute -top-1 right-4 z-40">
+                    <span className={`${statusColors[project.status]} text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md`}>
                       {statusLabels[project.status]}
                     </span>
                   </div>
+                </button>
+
+                {/* Project Info Below Circle */}
+                <h3 className="font-display text-lg font-bold text-[#1A1A1A] mb-2 group-hover:text-[#D64455] transition-colors leading-tight">
+                  {project.title}
+                </h3>
+
+                <div className="flex items-center justify-center gap-3 text-xs text-gray-500 mb-2">
+                  <span className="flex items-center gap-1">
+                    <MapPin className="w-3 h-3" />
+                    {project.location}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Calendar className="w-3 h-3" />
+                    {project.year}
+                  </span>
                 </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      {project.location}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {project.year}
-                    </span>
-                  </div>
-                  
-                  <h3 className="font-display text-xl font-bold text-[#004172] mb-3 group-hover:text-[#DC1E2D] transition-colors">
-                    {project.title}
-                  </h3>
-                  
-                  <div className="flex items-center gap-2 mb-4">
-                    <Building2 className="w-4 h-4 text-[#DC1E2D]" />
-                    <span className="text-sm font-medium text-gray-600">{project.sector}</span>
-                  </div>
-                  
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  
-                  <Link 
-                    href={`/projects/${project.id}`}
-                    className="inline-flex items-center text-[#DC1E2D] font-display font-semibold text-sm hover:text-[#004172] transition-colors"
-                  >
-                    View Project
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
+
+                <div className="flex items-center justify-center gap-1.5 mb-3">
+                  <Building2 className="w-3.5 h-3.5 text-[#D64455]" />
+                  <span className="text-xs font-medium text-gray-600">{project.sector}</span>
                 </div>
+
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="inline-flex items-center text-[#D64455] font-display font-semibold text-sm hover:text-[#1A1A1A] transition-colors focus:outline-none"
+                >
+                  View Project Details
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
               </article>
             ))}
           </div>
@@ -257,7 +282,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-[#004172]">
+      <section className="py-12 bg-[#5BA4D9]">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -275,25 +300,167 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
+      {/* CTA Section — Compact White */}
+      <section className="relative bg-[#5BA4D9] py-16 overflow-hidden">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#004172] mb-6">
-            Have a Project in Mind?
-          </h2>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            Get in touch with our team to discuss how we can bring your vision to life with our expert MEP solutions.
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-flex items-center justify-center bg-[#DC1E2D] text-white font-display text-sm font-bold uppercase tracking-wider px-10 py-4 rounded-full hover:bg-[#004172] transition-all duration-300"
+          <button
+            onClick={() => setIsProjectFormModalOpen(true)}
+            className="inline-flex items-center justify-center bg-[#D64455] text-white font-display text-sm font-bold uppercase tracking-wider px-8 py-3 rounded-full hover:shadow-[0_0_20px_rgba(214,68,85,0.4)] transition-all duration-300 focus:outline-none"
           >
             Start Your Project
-          </Link>
+            <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </button>
         </div>
       </section>
 
       <FooterContactInfo />
+
+      {/* Project Details Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-[#1A1A1A]/70 backdrop-blur-sm cursor-pointer transition-opacity"
+            onClick={() => setSelectedProject(null)}
+          ></div>
+          <div className="relative bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-300">
+            {/* Image side */}
+            <div className="w-full md:w-5/12 relative h-48 md:h-auto">
+              <Image
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4">
+                <span className={`${statusColors[selectedProject.status]} text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm`}>
+                  {statusLabels[selectedProject.status]}
+                </span>
+              </div>
+            </div>
+
+            {/* Details side */}
+            <div className="w-full md:w-7/12 p-8 md:p-10 flex flex-col">
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-4 pr-6">
+                {selectedProject.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-6 pb-6 border-b border-gray-100">
+                <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D64455]" /> {selectedProject.location}</span>
+                <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4 text-[#D64455]" /> {selectedProject.year}</span>
+                <span className="flex items-center gap-1.5"><Building2 className="w-4 h-4 text-[#D64455]" /> {selectedProject.sector}</span>
+              </div>
+
+              <div className="flex-grow">
+                <h4 className="font-display font-bold text-[#1A1A1A] mb-2 uppercase text-sm tracking-wider">Services Delivered</h4>
+                <p className="text-gray-600 leading-relaxed font-body text-[15px] mb-6">
+                  {selectedProject.description}
+                </p>
+              </div>
+
+              <div className="mt-auto pt-6 border-t border-gray-100">
+                <button
+                  onClick={() => {
+                    setSelectedProject(null);
+                    setIsProjectFormModalOpen(true);
+                  }}
+                  className="w-full bg-[#5BA4D9] text-white font-display font-bold uppercase tracking-wider py-3.5 rounded-full hover:bg-[#4A93C8] transition-colors shadow-md"
+                >
+                  Request Similar Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Start Project Form Modal */}
+      {isProjectFormModalOpen && (
+        <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-[#1A1A1A]/70 backdrop-blur-sm cursor-pointer transition-opacity"
+            onClick={() => setIsProjectFormModalOpen(false)}
+          ></div>
+          <div className="relative bg-white w-full max-w-lg rounded-3xl p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+            <button
+              onClick={() => setIsProjectFormModalOpen(false)}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+
+            {isProjectFormSubmitted ? (
+              <div className="text-center py-8 animate-in zoom-in duration-300">
+                <div className="w-16 h-16 bg-[#60B45A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h2 className="font-display text-2xl font-bold text-[#1A1A1A] mb-2">Project Submitted!</h2>
+                <p className="text-gray-600 mb-6">Awesome! We&apos;ll review your project requirements and connect with you shortly.</p>
+                <button
+                  onClick={() => { setIsProjectFormSubmitted(false); setIsProjectFormModalOpen(false); }}
+                  className="text-[#5BA4D9] font-semibold hover:underline"
+                >
+                  Close
+                </button>
+              </div>
+            ) : (
+              <>
+                <h3 className="font-display text-2xl font-bold text-[#1A1A1A] mb-2">Start Your Project</h3>
+                <p className="text-gray-600 text-sm mb-6">Tell us about your next project, and our experts will help you bring it to life.</p>
+                <form onSubmit={handleProjectSubmit} className="space-y-4">
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#1A1A1A] uppercase">Full Name</label>
+                    <input required type="text" className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5BA4D9]" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-[#1A1A1A] uppercase">Email</label>
+                      <input required type="email" className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5BA4D9]" />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-[#1A1A1A] uppercase">Phone</label>
+                      <input required type="tel" className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5BA4D9]" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#1A1A1A] uppercase">Project Type</label>
+                    <select required className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5BA4D9] cursor-pointer">
+                      <option value="">Select project type...</option>
+                      <option value="commercial">Commercial Building</option>
+                      <option value="residential">Residential Complex</option>
+                      <option value="industrial">Industrial Facility</option>
+                      <option value="hospitality">Hotel / Hospitality</option>
+                      <option value="education">Education Campus</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#1A1A1A] uppercase">Required Services</label>
+                    <div className="grid grid-cols-2 gap-2 mt-2">
+                      <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#D64455] focus:ring-[#D64455]" /> Mechanical</label>
+                      <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#D64455] focus:ring-[#D64455]" /> Electrical</label>
+                      <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#D64455] focus:ring-[#D64455]" /> Plumbing</label>
+                      <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#D64455] focus:ring-[#D64455]" /> Full MEP</label>
+                    </div>
+                  </div>
+                  <button type="submit" className="w-full bg-[#D64455] text-white font-display font-bold uppercase tracking-wider py-3 rounded-lg hover:bg-[#C13D4D] transition-colors mt-4">
+                    Send Inquiry
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }

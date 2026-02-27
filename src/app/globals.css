@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-brand-navy: #004172;
-  --color-brand-red: #dc1e2d;
+  --color-brand-blue: #5BA4D9;
+  --color-brand-blue-text: #2A7AB5;
+  --color-brand-blue-deep: #1E5F8C;
+  --color-brand-red: #D64455;
+  --color-brand-red-hover: #C13D4D;
+  --color-brand-green: #60B45A;
+  --color-brand-charcoal: #1A1A1A;
   --font-display: 'Montserrat', sans-serif;
   --font-body: 'Open Sans', sans-serif;
   --color-background: var(--background);
@@ -121,6 +126,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -131,7 +137,7 @@ nextjs-portal {
   display: none !important;
 }
 
-/* Gloster MEP Brand Styles */
+/* Ventario Engineering Brand Styles */
 .font-display {
   font-family: 'Montserrat', sans-serif;
 }
@@ -140,44 +146,56 @@ nextjs-portal {
   font-family: 'Open Sans', sans-serif;
 }
 
-.text-brand-navy {
-  color: #004172;
+.text-brand-blue {
+  color: #2A7AB5;
 }
 
 .text-brand-red {
-  color: #dc1e2d;
+  color: #D64455;
 }
 
-.bg-brand-navy {
-  background-color: #004172;
+.text-brand-green {
+  color: #60B45A;
+}
+
+.text-brand-charcoal {
+  color: #1A1A1A;
+}
+
+.bg-brand-blue {
+  background-color: #5BA4D9;
 }
 
 .bg-brand-red {
-  background-color: #dc1e2d;
+  background-color: #D64455;
 }
 
-.border-brand-navy {
-  border-color: #004172;
+.bg-brand-green {
+  background-color: #60B45A;
+}
+
+.border-brand-blue {
+  border-color: #5BA4D9;
 }
 
 .border-brand-red {
-  border-color: #dc1e2d;
+  border-color: #D64455;
 }
 
-.hover\:bg-brand-navy:hover {
-  background-color: #004172;
+.hover\:bg-brand-blue:hover {
+  background-color: #5BA4D9;
 }
 
 .hover\:bg-brand-red:hover {
-  background-color: #dc1e2d;
+  background-color: #C13D4D;
 }
 
 .hover\:text-brand-red:hover {
-  color: #dc1e2d;
+  color: #D64455;
 }
 
-.hover\:text-brand-navy:hover {
-  color: #004172;
+.hover\:text-brand-blue:hover {
+  color: #2A7AB5;
 }
 
 /* Container */
@@ -201,5 +219,26 @@ nextjs-portal {
   .container {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+/* ─── Mobile Responsiveness Globals ─── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
   }
 }

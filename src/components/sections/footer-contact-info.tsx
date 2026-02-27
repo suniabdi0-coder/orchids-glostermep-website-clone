@@ -1,134 +1,260 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Facebook, Instagram, Twitter, Linkedin, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Linkedin, Phone, MapPin, Mail, ArrowUp } from 'lucide-react';
 
 const FooterContactInfo = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const particleCount = 80;
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < particleCount; i++) {
+      const span = document.createElement('span');
+      span.classList.add('footer-particle');
+
+      const size = 3 + Math.random() * 6;
+      const distance = 10 + Math.random() * 15;
+      const position = Math.random() * 100;
+      const time = 3 + Math.random() * 3;
+      const delay = -1 * (Math.random() * 10);
+
+      span.style.setProperty('--dim', `${size}rem`);
+      span.style.setProperty('--uplift', `${distance}rem`);
+      span.style.setProperty('--pos-x', `${position}%`);
+      span.style.setProperty('--dur', `${time}s`);
+      span.style.setProperty('--delay', `${delay}s`);
+
+      fragment.appendChild(span);
+    }
+
+    container.appendChild(fragment);
+
+    return () => {
+      while (container.firstChild) container.removeChild(container.firstChild);
+    };
+  }, []);
+
   return (
-    <footer className="w-full">
-      {/* Top Dark Contact Strip */}
-      <section className="bg-[#051626] text-white pt-[100px] pb-[120px] relative overflow-hidden">
-        {/* Curved top edge simulation if needed, but based on screenshots it's a deep arched section */}
-        <div className="container mx-auto px-6 text-center z-10 relative">
-          <h2 className="text-white font-display text-[42px] font-bold mb-8 uppercase tracking-tight">
-            Get in touch with Gloster MEP.
-          </h2>
-          
-          <div className="red-dot-separator my-8">
-            <div className="dot">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-            </div>
-          </div>
+    <footer className="w-full relative">
 
-          <div className="flex flex-col items-center gap-2 mt-8">
-            <p className="font-display text-[16px] m-0">
-              Call: <a href="tel:02070896910" className="text-[#DC1E2D] font-bold hover:text-white transition-colors">0207 089 6910</a>
-            </p>
-            <p className="font-display text-[16px] m-0">
-              Email: <a href="mailto:enquiries@glostermep.co.uk" className="text-[#DC1E2D] font-bold hover:text-white transition-colors">enquiries@glostermep.co.uk</a>
-            </p>
-          </div>
-        </div>
+      {/* SVG liquid filter */}
+      <svg style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }} xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="liquid-effect">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+              result="liquid"
+            />
+          </filter>
+        </defs>
+      </svg>
 
-        {/* Arched Bottom Curve Decor */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[100px] bg-white rounded-[100%_100%_0_0]"></div>
-      </section>
+      {/* Gooey bubble riser — sits ABOVE the footer edge */}
+      <div
+        className="footer-gooey-riser"
+        ref={containerRef}
+        style={{ filter: 'url(#liquid-effect)' }}
+      />
 
-      {/* Main Footer Section */}
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
-            
-            {/* Column 1: Logo & Bio */}
-            <div className="flex flex-col gap-6">
-              <div className="max-w-[180px]">
-                <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/d4d998e5-27b8-478f-a6f1-0f7bb614d9a0-glostermep-co-uk/assets/images/Gloster-MEP-Ltd-mobile-logo-1.png"
-                  alt="Gloster MEP Ltd"
-                  width={180}
-                  height={64}
+      {/* ─── Main Footer ─── */}
+      <section className="footer-main-bg relative pt-6 pb-6">
+
+        <div className="container mx-auto px-5 md:px-6 max-w-[1240px] relative z-20">
+
+          {/* Top Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-x-8 gap-y-10 mb-8 text-center sm:text-left">
+
+            {/* Col 1 – Brand */}
+            <div className="sm:col-span-1 md:col-span-4 flex flex-col gap-6 items-center sm:items-start">
+              <div className="max-w-[200px]">
+                <Image
+                  src="/for images/logo of the company.png"
+                  alt="Ventario Engineering"
+                  width={200}
+                  height={70}
                   className="object-contain"
                 />
               </div>
-              <p className="text-[#333333] text-[15px] leading-relaxed">
-                Gloster MEP Ltd. is a dynamic, driven mechanical, electrical and public health contractor delivering innovative engineering solutions across various sectors.
+              <p className="text-[#1A1A1A]/80 text-[14px] font-body leading-[1.9] max-w-[300px]">
+                Ventario Engineering is committed to delivering practical engineering solutions
+                that meet client needs while adhering to technical standards and best
+                practices. Our team combines field experience with strong technical
+                knowledge to support projects of varying scale and complexity.
               </p>
+              {/* Social Icons */}
+              <div className="flex gap-4 items-center mt-2 justify-center sm:justify-start">
+                {[
+                  { Icon: Facebook, href: 'https://www.facebook.com/ventario.engineering' },
+                  { Icon: Instagram, href: '#' },
+                  { Icon: Twitter, href: '#' },
+                  { Icon: Linkedin, href: 'https://www.linkedin.com/company/ventario-engineering' },
+                ].map(({ Icon, href }, i) => (
+                  <a
+                    key={i}
+                    href={href}
+                    className="w-10 h-10 bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center text-[#1A1A1A] hover:bg-[#FF6B6B] hover:text-white hover:scale-110 hover:shadow-[0_0_15px_rgba(255,107,107,0.5)] transition-all duration-300"
+                  >
+                    <Icon size={16} />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Column 2: Contact Information */}
-            <div>
-              <h3 className="text-[#004172] font-display text-[22px] font-bold mb-8">Contact information</h3>
-              <div className="flex flex-col gap-6">
-                <div className="flex gap-3 items-start">
-                  <MapPin className="text-[#DC1E2D] w-5 h-5 flex-shrink-0 mt-1" />
-                  <p className="text-[#333333] text-[15px] leading-snug m-0">
-                    29 Great Guildford Street<br />
-                    London<br />
-                    SE1 0ES
-                  </p>
-                </div>
-                
-                <div className="border-t border-[#e5e5e5] pt-6">
-                  <div className="flex gap-3 items-center">
-                    <Phone className="text-[#DC1E2D] w-5 h-5 flex-shrink-0" />
-                    <a href="tel:02070896910" className="text-[#333333] text-[15px] hover:text-[#DC1E2D] transition-colors">
-                      0207 089 6910
-                    </a>
+            {/* Col 2 – Contact */}
+            <div className="sm:col-span-1 md:col-span-3">
+              <h3 className="text-[#1A1A1A] font-display text-[15px] font-bold uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
+                <span className="w-5 h-[2px] bg-[#FF6B6B] inline-block"></span>
+                Contact Us
+              </h3>
+              <ul className="flex flex-col gap-5">
+                <li className="flex gap-4 items-start group">
+                  <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FF6B6B] transition-colors duration-300">
+                    <MapPin className="text-[#1A1A1A] group-hover:text-white w-4 h-4 transition-colors duration-300" />
                   </div>
-                </div>
-
-                <div className="flex gap-4 items-center pt-2">
-                  <a href="#" className="text-[#333333] hover:text-[#DC1E2D] transition-colors"><Facebook size={18} /></a>
-                  <a href="#" className="text-[#333333] hover:text-[#DC1E2D] transition-colors"><Instagram size={18} /></a>
-                  <a href="#" className="text-[#333333] hover:text-[#DC1E2D] transition-colors"><Twitter size={18} /></a>
-                  <a href="#" className="text-[#333333] hover:text-[#DC1E2D] transition-colors"><Linkedin size={18} /></a>
-                </div>
-              </div>
+                  <span className="text-[#1A1A1A]/80 text-[14px] font-body leading-relaxed mt-1">
+                    Jigjiga, Somali Region<br />Ethiopia
+                  </span>
+                </li>
+                <li className="flex gap-4 items-center group">
+                  <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FF6B6B] transition-colors duration-300">
+                    <Phone className="text-[#1A1A1A] group-hover:text-white w-4 h-4 transition-colors duration-300" />
+                  </div>
+                  <a href="tel:+251945512222" className="text-[#1A1A1A]/80 text-[14px] font-body group-hover:text-[#FF6B6B] font-semibold transition-colors">
+                    094 551 2222
+                  </a>
+                </li>
+                <li className="flex gap-4 items-center group">
+                  <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FF6B6B] transition-colors duration-300">
+                    <Mail className="text-[#1A1A1A] group-hover:text-white w-4 h-4 transition-colors duration-300" />
+                  </div>
+                  <a href="mailto:info@ventario.com" className="text-[#1A1A1A]/80 text-[14px] font-body group-hover:text-[#FF6B6B] font-semibold transition-colors">
+                    info@ventario.com
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            {/* Column 3: Site Links 1 */}
-              <div>
-                <h3 className="text-[#004172] font-display text-[22px] font-bold mb-8">Links</h3>
-                <ul className="flex flex-col gap-3">
-                  <li><a href="/" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Home</a></li>
-                  <li><a href="/about" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">About</a></li>
-                  <li><a href="/services" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Our Services</a></li>
-                  <li><a href="/projects" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Projects</a></li>
-                  <li><a href="/blog" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Blog</a></li>
-                  <li><a href="/contact" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Contact</a></li>
-                </ul>
-              </div>
-
-            {/* Column 4: Site Links 2 */}
-            <div className="pt-0 md:pt-[60px]">
+            {/* Col 3 – Pages */}
+            <div className="sm:col-span-1 md:col-span-2">
+              <h3 className="text-[#1A1A1A] font-display text-[15px] font-bold uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
+                <span className="w-5 h-[2px] bg-[#FF6B6B] inline-block"></span>
+                Pages
+              </h3>
               <ul className="flex flex-col gap-3">
-                <li><a href="/contact" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Contact</a></li>
-                <li><a href="#" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Disclaimer</a></li>
-                <li><a href="#" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Privacy policy</a></li>
-                <li><a href="#" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Cookie policy</a></li>
-                <li><a href="#" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Modern slavery policy</a></li>
-                <li><a href="#" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Qual Env OHS Policy</a></li>
-                <li><a href="#" className="text-[#333333] text-[14px] hover:text-[#DC1E2D] transition-colors">Sitemap</a></li>
+                {['Home', 'About', 'Services', 'Projects', 'Blog', 'Contact'].map((link) => (
+                  <li key={link}>
+                    <a
+                      href={`/${link.toLowerCase() === 'home' ? '' : link.toLowerCase()}`}
+                      className="text-[#1A1A1A]/80 text-[14px] font-body hover:text-[#FF6B6B] hover:translate-x-1.5 transition-all duration-300 flex items-center gap-2 font-medium"
+                    >
+                      <span className="text-[#FF6B6B]">»</span>
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Col 4 – Legal */}
+            <div className="sm:col-span-1 md:col-span-3">
+              <h3 className="text-[#1A1A1A] font-display text-[15px] font-bold uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
+                <span className="w-5 h-[2px] bg-[#FF6B6B] inline-block"></span>
+                Legal
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {[
+                  ['Privacy Policy', '/privacy-policy'],
+                  ['Cookie Policy', '/cookie-policy'],
+                  ['Disclaimer', '/disclaimer'],
+                  ['Modern Slavery Policy', '/modern-slavery'],
+                  ['Qual Env OHS Policy', '/ohs-policy'],
+                  ['Sitemap', '/sitemap'],
+                ].map(([label, href]) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      className="text-[#1A1A1A]/80 text-[14px] font-body hover:text-[#FF6B6B] hover:translate-x-1.5 transition-all duration-300 flex items-center gap-2 font-medium"
+                    >
+                      <span className="text-[#FF6B6B]">»</span>
+                      {label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
-          {/* Bottom Bar Details */}
-          <div className="mt-20 border-t border-[#e5e5e5] pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center">
-              <Image 
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/d4d998e5-27b8-478f-a6f1-0f7bb614d9a0-glostermep-co-uk/assets/images/help-for-heroes-6.png"
-                alt="In support of Help for Heroes"
-                width={160}
-                height={40}
-                className="h-10 w-auto object-contain"
-              />
-            </div>
+          {/* Bottom Bar */}
+          <div className="border-t border-[#1A1A1A]/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-[#1A1A1A]/60 text-[13px] font-body font-medium">
+              © {new Date().getFullYear()} Ventario Engineering. All rights reserved.
+            </p>
+            <a
+              href="#"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1A1A1A] shadow-md hover:bg-[#FF6B6B] hover:text-white transition-all duration-300"
+              title="Back to top"
+            >
+              <ArrowUp size={16} />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Deepest shade for site conclusion */}
-      <div className="bg-[#051626] py-8 w-full"></div>
+      {/* ─── Styles ─── */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .footer-main-bg {
+            background: #89CFF0;
+          }
+
+          /* The container that sits just above the footer and shoots bubbles up */
+          .footer-gooey-riser {
+            position: relative;
+            width: 120%;
+            left: -10%;
+            height: 1.5rem;
+            background: #89CFF0;
+            transform: translateY(0);
+            z-index: 0;
+            overflow: visible;
+            pointer-events: none;
+            margin-bottom: -1px;
+          }
+
+          .footer-particle {
+            position: absolute;
+            background: #89CFF0;
+            border-radius: 50%;
+            top: 50%;
+            left: var(--pos-x, 50%);
+            width: var(--dim, 5rem);
+            height: var(--dim, 5rem);
+            transform: translate(-50%, -50%);
+            animation: footer-float-up var(--dur, 4s) ease-in infinite;
+            animation-delay: var(--delay, 0s);
+          }
+
+          @keyframes footer-float-up {
+            0% {
+              top: 50%;
+              transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+              top: calc(var(--uplift, 12rem) * -1);
+              transform: translate(-50%, -50%) scale(0);
+            }
+          }
+        `
+      }} />
     </footer>
   );
 };
